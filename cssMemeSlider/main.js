@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
   setButtons.forEach((button, i) => {
     button.addEventListener("click", function (event) {
       offset = 0;
-      offset = offset + 500 * i;
+      if (window.innerWidth <= 768) {
+        offset = offset + 250 * i;
+      } else {
+        offset = offset + 500 * i;
+      }
       event.stopPropagation();
       setButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.toggle("active");
