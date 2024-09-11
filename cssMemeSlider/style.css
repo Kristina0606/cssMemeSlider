@@ -1,7 +1,7 @@
 
-.main {
+body {
     background-color:#181818;
-    height: 100vh;
+    
 }
 
 .container {
@@ -49,4 +49,36 @@ height: 20px;
 cursor: pointer;
 border-radius: 50%;
 background-color: bisque;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    img {
+            border-radius: 15px;
+            width: 250px;
+            height: 200px;
+        }
+
+    p {
+            
+            font-size: 14px;
+        }
+
+    .mem-button {
+                    width: 15px;
+                    height: 15px;
+                }
+    .container {
+            gap: 50px;
+        }
+    .mem-slider {
+            width: 250px;
+                height: 200px;
+        }
+    .slider-buttons {
+            justify-content: center;
+            width: 250px;
+            display: flex;
+            gap: 20px;
+    
+        }
 }
