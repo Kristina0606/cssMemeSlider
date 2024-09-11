@@ -1,0 +1,52 @@
+
+.main {
+    background-color:#181818;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: bisque;
+    font-size: 28px;
+}
+
+img { 
+    border-radius: 15px;
+    width: 500px;
+    height: 400px;
+}
+
+.mem-slider {
+    width: 500px;
+    height: 400px;
+}
+
+.slider-line {
+    display: flex;
+    position: relative;
+    left: 0;
+}
+
+.slider-buttons {
+    justify-content: flex-end;
+    width: 500px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.mem-button {
+width: 20px;
+height: 20px;
+cursor: pointer;
+border-radius: 50%;
+background-color: bisque;
+}
