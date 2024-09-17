@@ -1,44 +1,122 @@
 <!-- @format -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mem-slider</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>cssMemeSlider</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: rgb(54, 48, 66);
+      }
+      .slider {
+        position: relative;
+        width: 40vw;
+        height: 60vh;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 400%;
+      }
+      .slide {
+        width: 25%;
+        height: 100%;
+      }
+      .navigation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .buttons label {
+        cursor: pointer;
+        padding: 1em;
+        background: rgba(255, 255, 255, 0.516);
+        border-radius: 5px;
+        margin: 0 0.5em;
+        transition: background 0.3s;
+      }
+      .buttons label:hover {
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      #slide1:checked ~ .slides {
+        transform: translateX(0);
+      }
+      #slide2:checked ~ .slides {
+        transform: translateX(-25%);
+      }
+      #slide3:checked ~ .slides {
+        transform: translateX(-50%);
+      }
+      #slide4:checked ~ .slides {
+        transform: translateX(-75%);
+      }
+    </style>
   </head>
   <body>
-    <main class="main">
-      <div class="container">
-        <div class="mem-slider">
-          <div class="slider-line">
-            <div class="slide">
-              <img src="./images/IMG_0183.JPG" alt="mem1" />
-              <p class="slide-description">The first slide</p>
-            </div>
-            <div class="slide">
-              <img src="./images/IMG_0184.JPG" alt="mem2" />
-              <p class="slide-description">The second slide</p>
-            </div>
-            <div class="slide">
-              <img src="./images/IMG_0186.JPG" alt="mem3" />
-              <p class="slide-description">The third slide</p>
-            </div>
-            <div class="slide">
-              <img src="./images/IMG_0187.JPG" alt="mem4" />
-              <p class="slide-description">The fourth slide</p>
-            </div>
-          </div>
+    <div class="slider">
+      <input type="radio" name="slider" id="slide1" checked />
+      <input type="radio" name="slider" id="slide2" />
+      <input type="radio" name="slider" id="slide3" />
+      <input type="radio" name="slider" id="slide4" />
+
+      <div class="slides">
+        <div class="slide">
+          <img
+            src="./images/IMG_0183.JPG"
+            alt="Слайд 1"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
         </div>
-        <div class="slider-buttons">
-          <button class="mem-button 1btn"></button>
-          <button class="mem-button 2btn"></button>
-          <button class="mem-button 3btn"></button>
-          <button class="mem-button 4btn"></button>
+        <div class="slide">
+          <img
+            src="./images/IMG_0184.JPG"
+            alt="Слайд 2"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="./images/IMG_0186.JPG"
+            alt="Слайд 3"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="./images/IMG_0187.JPG"
+            alt="Слайд 4"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
         </div>
       </div>
-    </main>
-    <script type="module" src="main.js"></script>
+    </div>
+    <div class="buttons">
+      <label for="slide1">1</label>
+      <label for="slide2">2</label>
+      <label for="slide3">3</label>
+      <label for="slide4">4</label>
+    </div>
   </body>
 </html>
